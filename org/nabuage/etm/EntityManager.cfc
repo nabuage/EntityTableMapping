@@ -21,20 +21,20 @@ component output="false" displayname="Manager"  {
     }
 
     private string function addComma(required string clause) {
-        if (clause NEQ "") {
-            return clause & ", ";
+        if (ARGUMENTS.clause NEQ "") {
+            return ARGUMENTS.clause & ", ";
         }
         else {
-            return clause;
+            return ARGUMENTS.clause;
         }
     }
 
     private string function addAnd(required string clause) {
-        if (clause NEQ "") {
-            return clause & " AND ";
+        if (ARGUMENTS.clause NEQ "") {
+            return ARGUMENTS.clause & " AND ";
         }
         else {
-            return clause;
+            return ARGUMENTS.clause;
         }
     }
 
@@ -229,6 +229,7 @@ component output="false" displayname="Manager"  {
         var valuesSQL = "";
         var whereSQL = "";
         var properties = ARGUMENTS.entity.getProperties();
+        var property = "";
         var selectIdentifiers = StructNew();
         var selectNullIdentifiers = StructNew();
         var selectIdentifier = "";
@@ -330,6 +331,7 @@ component output="false" displayname="Manager"  {
         var setSQL = "";
         var whereSQL = "";
         var properties = ARGUMENTS.entity.getProperties();
+        var property = "";
         var addToWhere = "";
         var parameters = ArrayNew(1);
         var counter = 0;
@@ -402,6 +404,7 @@ component output="false" displayname="Manager"  {
         var setSQL = "";
         var whereSQL = "";
         var properties = ARGUMENTS.entity.getProperties();
+        var property = "";
         var addToWhere = "";
         var dateDeleted = Now();
         var parameters = ArrayNew(1);

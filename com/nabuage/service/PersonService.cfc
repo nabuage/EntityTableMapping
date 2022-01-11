@@ -5,7 +5,7 @@ component displayname="PersonService" {
         return this;
     }
 
-    public com.entity.Person getPersonById(required numeric id) {
+    public com.entity.Person function getPersonById(required numeric id) {
         var person = new com.nabuage.entity.Person();
 
         VARIABLES.manager.load(person, ARGUMENT.id);
